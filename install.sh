@@ -387,11 +387,11 @@ cp bayesianClassifier.txt matureBayes.py $PREFIX/Script
 
 echo "Installing Hairplendex"
 echo "================================================================================================================================================================================================="
-echo "1) Type ./Hairpindex_installer.install when the terminal goes to root directory wait till it loads" | lolcat
-echo "2) Just click NEXT option for path /usr/local/MATLAB/MATLAB_Runtime/v98" | lolcat
-echo "3) Write exit in the terminal" | lolcat
-echo "4) Click exit if it dosen't processd after installing" | lolcat
-echo "5) If it ask again for installation cancel the installation it will proccesed for next installation" | lolcat
+echo "1) Type ./Hairpindex_installer.install when the terminal goes to root directory wait till it loads"
+echo "2) Just click NEXT option for path /usr/local/MATLAB/MATLAB_Runtime/v98" 
+echo "3) Write exit in the terminal" 
+echo "4) Click exit if it dosen't processd after installing" 
+echo "5) If it ask again for installation cancel the installation it will proccesed for next installation" 
 echo "=================================================================================================================================="
 
 
