@@ -124,7 +124,7 @@ fi
 set -e 
 
 echo "This version of miRPV works best on ubuntu System. However, it can be tried in other linux system at your own risk"
-systemID=sudo cat /etc/os-release | grep "^ID="| awk -F "=" '{print $2}'
+systemID=cat /etc/os-release | grep "^ID="| awk -F "=" '{print $2}'
 
 if [[ "$systemID" -eq "ubuntu" ]]; then
 	echo "Current System is ubuntu continue to installing dependencies"
@@ -399,8 +399,8 @@ cd $PREFIX/tools
 tar -xf HAirpindex.tar.xz
 mv file $PREFIX/build
 cd $PREFIX/build/file
-sudo su
-sudo ./Hairpindex_installer.install
+
+./Hairpindex_installer.install
 
 #Getopt
 echo "Installing Getopt"
@@ -408,9 +408,9 @@ if [ ! -e "$BUILD/$GETOPT_LONG_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/Getopt-Long-2.51"
 	perl Makefile.PL
-	sudo make 
-	sudo make test
-	sudo make install
+	make 
+	make test
+	make install
 	set +x
 fi
 
@@ -420,9 +420,9 @@ if [ ! -e "$BUILD/$ALGORITHM_SVM_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/Algorithm-SVM-0.13"
 	perl Makefile.PL
-	sudo make 
-	sudo make test
-	sudo make install
+	make 
+	make test
+	make install
 	set +x
 fi
 
@@ -432,9 +432,9 @@ if [ ! -e "$BUILD/$FILE_CHIDER_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/File-chdir-0.1010"
 	perl Makefile.PL
-	sudo make 
-	sudo make test
-	sudo make install
+	make 
+	make test
+	make install
 	set +x
 fi
 
@@ -444,9 +444,9 @@ if [ ! -e "$BUILD/$PATH_LINK_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/PathTools-3.75"
 	perl Makefile.PL
-	sudo make 
-	sudo make test
-	sudo make install
+	make 
+	make test
+	make install
 	set +x
 fi
 
@@ -456,9 +456,9 @@ if [ ! -e "$BUILD/$THREADS_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/threads-2.21"
 	perl Makefile.PL
-	sudo make 
-	sudo make test
-	sudo make install
+	make 
+	make test
+	make install
 	set +x
 fi
 
@@ -471,7 +471,7 @@ if [ ! -e "$BUILD/$VIENNA_RNA_BUILD_DIR/makefile" ] ; then
 	./configure
 	make
 	make check
-	sudo make install
+	make install
 	set +x
 fi
 
@@ -486,11 +486,11 @@ if [ ! -e "$BUILD/$UNAFOLD_BUILD_DIR/makefile" ] ; then
 	./configure
 	make
 	#echo "running sudo make install"
-	sudo make install
+	make install
 	echo "running"
 	cd "$BUILD/unafold-3.8/scripts"
-	sudo cp -r UNAFold.pl /bin/
-	sudo cp -r UNAFold.pl "$PREFIX" /bin
+	cp -r UNAFold.pl /bin/
+	cp -r UNAFold.pl "$PREFIX" /bin
 	set +x
 fi
 
@@ -501,8 +501,8 @@ if [ ! -e "BUILD/$LIBSVM_BUILD_DIR/makefile" ] ; then
 	set -x 
 	cd "$BUILD/libsvm-3.14"
 	make
-	sudo cp -r svm-predict /bin/
-	sudo cp svm-predict "$PREFIX"/bin/
+	cp -r svm-predict /bin/
+	cp svm-predict "$PREFIX"/bin/
 	set +x
 fi
 
@@ -513,7 +513,7 @@ if [ ! -e "$BUILD/$MIRANDA_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/miRanda-3.3a"
 	./configure 
-	sudo make install
+	make install
 	set +x
 fi
 
@@ -523,7 +523,7 @@ if [ ! -e "$BUILD/$CT2OUT_BUILD_DIR/" ] ; then
 	set -x
 	cd "$BUILD/ct2out"
 	gfortran ct2out.f -o ct2out
-	sudo cp -r ct2out /bin/
+	cp -r ct2out /bin/
 	cp ct2out "$PREFIX"/bin/
 	set +x
 fi
