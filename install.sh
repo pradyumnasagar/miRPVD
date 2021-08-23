@@ -400,7 +400,7 @@ tar -xf HAirpindex.tar.xz
 mv file $PREFIX/build
 cd $PREFIX/build/file
 
-./Hairpindex_installer.install -mode silent
+#./Hairpindex_installer.install -mode silent
 
 #Getopt
 echo "Installing Getopt"
