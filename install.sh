@@ -400,7 +400,7 @@ tar -xf HAirpindex.tar.xz
 mv file $PREFIX/build
 cd $PREFIX/build/file
 
-#./Hairpindex_installer.install -mode silent
+sudo -n ./Hairpindex_installer.install -mode silent
 
 #Getopt
 echo "Installing Getopt"
@@ -408,9 +408,9 @@ if [ ! -e "$BUILD/$GETOPT_LONG_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/Getopt-Long-2.51"
 	perl Makefile.PL
-	sudo make 
-	sudo make test
-	sudo make install
+	sudo -n  make 
+	sudo -n  make test
+	sudo -n make install
 	set +x
 fi
 
