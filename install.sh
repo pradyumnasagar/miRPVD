@@ -408,9 +408,9 @@ if [ ! -e "$BUILD/$GETOPT_LONG_BUILD_DIR/makefile" ] ; then
 	set -x
 	cd "$BUILD/Getopt-Long-2.51"
 	perl Makefile.PL
-	make 
-	make test
-	make install
+	sudo make 
+	sudo make test
+	sudo make install
 	set +x
 fi
 
