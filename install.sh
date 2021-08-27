@@ -397,7 +397,7 @@ echo "==========================================================================
 
 cd $PREFIX/tools
 tar -xf HAirpindex.tar.xz
-mv -rf file $PREFIX/build
+mv -f file $PREFIX/build
 cd $PREFIX/build/file
 
 sudo -n ./Hairpindex_installer.install -mode silent
