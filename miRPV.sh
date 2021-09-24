@@ -4,7 +4,7 @@
 # Following script is to run the miRPV pipeline
 #
 #
-# Author: Pradyumna Jayaram,  Vinayak Rao and Kapaettu Satyamoorthy
+
 #
 #
 # Parameteres :
@@ -31,10 +31,8 @@ Options:
 File 
 *.fasta, --Only fasta format sequences are allowed
 #By Pradyumna Jayraman and Vinayak Rao Copyright (C) 2020
-Manipal Scchool of Life Science Manipal.MAHE, 576104, India
-Department of Cell and Molecular Biology, MSOLS, MAHE,
-Departement of Bioinformatics, MSOLS, MAHE.
-Homepage:http://slsdb.manipal.edu
+Manipal School of Life Science Manipal,MAHE, 576104, India
+
  
 EOF
 }
@@ -57,7 +55,8 @@ done
 
 DIRECTORY=$(pwd)
 echo "=================================================================================================================================================================================================="
-figlet Welcome to miRPV Pipeline | pv -qL 160 #| lolcat 
+#figlet Welcome to miRPV Pipeline | pv -qL 160 #| lolcat 
+echo "Welcome to miRPV Pipeline"
 echo "=================================================================================================================================================================================================="
 
 echo "Please give the project name" | lolcat
@@ -222,12 +221,12 @@ echo "6) Converting miRPV Output Into final Report"
 	touch Intro.txt
 	echo "#miRNAs result by miRPV Pipeline " > Intro.txt
 #	echo "#By Pradyumna Jayaram and Vinayak Rao" >> Intro.txt 
-	echo "#Reporting bugs to mlsc@manipal.edu" >> Intro.txt
+	echo "#Report bugs to mlsc@manipal.edu" >> Intro.txt
 	echo "#Manipal Academy of Higher Education Manipal, MAHE INDIA" >> Intro.txt
-	echo "#Manipal School of Life Sciences Maniapl " >>  Intro.txt
-	echo "#Departement of Cell and Molecular Biology " >> Intro.txt
-	echo "#Departement of Bioinformatics MAHE " >> Intro.txt
-	echo "#Homepage:http://slsdb.manipal.edu" >> Intro.txt
+#	echo "#Manipal School of Life Sciences Maniapl " >>  Intro.txt
+#	echo "#Departement of Cell and Molecular Biology " >> Intro.txt
+#	echo "#Departement of Bioinformatics MAHE " >> Intro.txt
+#	echo "#Homepage:http://slsdb.manipal.edu" >> Intro.txt
 	
 
 	sed -i '1s/^/\nSUMMARY OF THE miRPV PIPELINE: \n\n /' Sum.txt
@@ -260,14 +259,14 @@ else
 
 	cat Pri.txt Real.txt Mat.txt > Sum.txt 
 	touch Intro.txt
-	echo "#miRNAs result by miRPV Pipeline " > Intro.txt
+	echo "miRNAs result by miRPV Pipeline " > Intro.txt
 #	echo "#By Pradyumna Jayaram and Vinayak Rao" >> Intro.txt 
-	echo "#Reporting bugs to mlsc@manipal.edu" >> Intro.txt
-	echo "#Manipal Academy of Higher Education Manipal, MAHE INDIA" >> Intro.txt
-	echo "#Manipal School of Life Sciences Maniapl " >>  Intro.txt
-	echo "#Departement of Cell and Molecular Biology " >> Intro.txt
-	echo "#Departement of Bioinformatics MAHE " >> Intro.txt
-	echo "#Homepage:http://slsdb.manipal.edu" >> Intro.txt
+	echo "Report bugs to mlsc@manipal.edu" >> Intro.txt
+#	echo "#Manipal Academy of Higher Education Manipal, MAHE INDIA" >> Intro.txt
+#	echo "#Manipal School of Life Sciences Maniapl " >>  Intro.txt
+#	echo "#Departement of Cell and Molecular Biology " >> Intro.txt
+#	echo "#Departement of Bioinformatics MAHE " >> Intro.txt
+#	echo "#Homepage:http://slsdb.manipal.edu" >> Intro.txt
 
 	sed -i '1s/^/\nSUMMARY OF THE miRPV PIPELINE: \n\n /' Sum.txt
 	cat Intro.txt Sum.txt Pri_miRNA.txt Real_miRNA.txt Mature_miRNA.txt  > miRPV_Output
@@ -284,13 +283,13 @@ fi
 
 sl
 
-figlet Pipline is completed | pv -qL 120 | lolcat 
+figlet Prediction is completed | pv -qL 120 | lolcat 
 echo `date`
 
 else
 	echo "Input file is not a fasta file"
 fi
-echo "THANK YOU FOR USING miRPV" | pv -qL 20 
+echo "Thank you for using miRPV" | pv -qL 20 
 echo ""
 echo "Please find the reults in Output directory"
 echo ""
